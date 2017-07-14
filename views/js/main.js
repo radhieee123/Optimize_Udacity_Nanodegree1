@@ -496,8 +496,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
     
   var items = document.querySelectorAll('.mover');
-  var phaseDom=document.body.scrollTop;
-  var p=phaseDom/1250;
+  var p=document.body.scrollTop/1250;
   for (var i = 0; i < items.length; i++) {
 
     /*Here, first the style segment is changed and then the layout.*/
