@@ -503,8 +503,6 @@ function updatePositions() {
     items[i].style.left = items[i].basicLeft + 100 * (Math.sin((p) +(i))) + 'px';
     /*There was no need of modulo operator as the result was i.*/
     //var phase = Math.sin((p) +(i));
-    
-    console.log(phase);
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
