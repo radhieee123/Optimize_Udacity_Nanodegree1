@@ -501,7 +501,7 @@ function updatePositions() {
     /*Here, first the style segment is changed and then the layout.*/
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     /*There was no need of modulo operator as the result was i.*/
-     phase+=i /*(i % 5)*/);
+     phase+=i /*(i % 5)*/;
     console.log(phase);
   }
 
