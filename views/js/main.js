@@ -494,7 +494,6 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-    
   var items = document.querySelectorAll('.mover');
   var p=document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
@@ -523,8 +522,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   /*As there was no need of loading 200 pizzas ,So just added 20 pizzas :)*/
+  var elem = document.createElement('img');
   for (var i = 0; i < 20; i++) {
-    var elem = document.createElement('img');
+    
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
