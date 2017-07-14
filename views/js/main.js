@@ -501,7 +501,7 @@ function updatePositions() {
     /*Here, first the style segment is changed and then the layout.*/
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     /*There was no need of modulo operator as the result was i.*/
-    var phase = Math.sin((document.body.scrollTop / 1250)+phase+i);
+    var phase = Math.sin((document.body.scrollTop / 1250)+i);
      
     console.log(phase);
   }
