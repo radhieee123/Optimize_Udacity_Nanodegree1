@@ -441,7 +441,7 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     var random=document.querySelectorAll(".randomPizzaContainer");
     var newwidth;
-     function sizeSwitcher (size) {
+     
       switch(size) {
         case "1":
           newwidth=25;
@@ -451,7 +451,6 @@ var resizePizzas = function(size) {
           newwidth=50;
         default:
           console.log("bug in sizeSwitcher");
-      }
     for (var i = 0; i < random.length; i++) {
       /*var dx = determineDx(random[i], size);
       var newwidth = (random[i].offsetWidth + dx) + 'px';*/
