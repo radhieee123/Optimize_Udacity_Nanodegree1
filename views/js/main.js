@@ -566,6 +566,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  var do1 =document.querySelector("#movingPizzas1");
   var elem = document.createElement('img');
   for (var i = 0; i < 100; i++) {
     
@@ -575,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    do1.appendChild(elem);
   }
   updatePositions();
 });
