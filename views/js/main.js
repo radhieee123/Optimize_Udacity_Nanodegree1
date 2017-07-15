@@ -551,6 +551,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.style.height = "100px";
         elem.style.width = "73.333px";
         elem.basicLeft = (i % cols) * s;
+        console.log(i, i % cols, (i % cols) * s); 
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
         movingPizzas.appendChild(elem);
 
