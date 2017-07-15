@@ -45,3 +45,4 @@ Script is:
 ### 2) updatePosition();
 #####	 2.1) In the function updatePositions(), the phase was calculating the DOM value each and every time in the for loop which finally,I kept outside the forloop.Also,in the further calculation, the modulo operator was removed.
 #####	 2.2) logAverageFame() function was again calculating the DOM value with an extra variable. So,that was also removed.
+#####	2.3) For printing background pizzas, in starter code if we observe there 3 rows and cols 8. So,in total iteration of background is done for 24 times(rosxcols).
