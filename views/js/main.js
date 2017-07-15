@@ -541,9 +541,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updatePositions() {
   frame++;
+  if (!window.items) {
+    var items = document.querySelectorAll('.mover');
+    // console.log(window.items);
+  }
+  
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  //var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((document.body.scrollTop / 1250) + (i));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
