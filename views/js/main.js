@@ -542,25 +542,20 @@ document.addEventListener('DOMContentLoaded', function() {
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var items = document.querySelectorAll('.mover');
-  var p=(document.body.scrollTop/1250);
 
+  var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
-    //var p=();
-    //var phase = Math.sin((p) + (i));
-    items[i].style.left = items[i].basicLeft + 100 * (phase) + 'px';
-    var phase=Math.sin((p) + (i));
-    //var phase = (Math.sin((p/1250) + (i)));
+    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
-  var t=window.performance.getEntriesByName("measure_frame_duration");
   if (frame % 10 === 0) {
-    //var timesToUpdatePosition = t;//window.performance.getEntriesByName("measure_frame_duration");
-    logAverageFrame(t);
+    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+    logAverageFrame(timesToUpdatePosition);
   }
 }
 
@@ -571,7 +566,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
