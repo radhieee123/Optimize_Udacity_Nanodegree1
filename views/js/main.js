@@ -538,11 +538,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   updatePositions();
 });*/
-
+var p=(document.body.scrollTop);
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var p=(document.body.scrollTop);
+  
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
     //var phase = Math.sin((p) + (i));
