@@ -500,7 +500,8 @@ function updatePositions() {
   for (var i = 0; i < items.length; i++) {
 
     /*Here, first the style segment is changed and then the layout.*/
-    items[i].style.left = items[i].basicLeft + 100 * (Math.sin((p/1250) +(i))) + 'px';
+    var  phase=(Math.sin((p/1250) +(i)));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     /*There was no need of modulo operator as the result was i.*/
     //var phase = Math.sin((p) +(i));
   }
