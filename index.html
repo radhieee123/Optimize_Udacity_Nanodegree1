@@ -18,27 +18,25 @@
   <!-- Optimization: Adding async attribute to run the javascript asynchronously -->
   <script async src="http://www.google-analytics.com/analytics.js"></script>
   <script async src="js/perfmatters.js"></script>
-  <style>
-        html {
-        font-size: 100%;
-        overflow-y: scroll;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: none;
-      }
-
-      body {
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.61;
-        font-weight: 400;
-        font-family: 'Open Sans', sans-serif;
-        color: #333;
-        background: #fff;
-      }
-  </style>
 </head>
 
 <body>
+  <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="critical.css" media="screen and (min-width:480px)"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
   <header>
     <a href="/">
       <img src="img/profilepic.jpg">
@@ -89,7 +87,7 @@
         })();
       </script>
       <!-- Optimization: Add Media and Adding the stylesheets at last for the better perfomanxce. -->
-      <link href="css/critical.css" rel="stylesheet" media="screen and (min-width:480px)">
+      <!--<link href="css/critical.css" rel="stylesheet" >-->
       <!-- Optiomization:- Added Meida Query-->
       <link href="css/print.css" rel="stylesheet" media="print">
     </footer>
