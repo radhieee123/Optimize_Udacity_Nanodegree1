@@ -16,9 +16,27 @@
 #####	 Instead of adding Google Web Fonts with the link tag,for unbloacking the rendering path,an inline javascript is been added in index.html in footer section which enalbes the web fonts.
 Script is:
 
+<script type="text/javascript">
+        WebFontConfig = {
+          google: { families: [ 'Open+Sans:400,700'] }
+        };
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })();
+      </script>
+
+
+#### For further details, you can refer,https://github.com/typekit/webfontloader
+
 ### 3) Stylesheets
 
-The link tags for stylesheets style.css and print.css are added in footer section with the Media attributes.They are kept in footer section so that it starts building HTML and atlast goes for styling the HTML DOM with stylesheet.
+##### The link tags for stylesheets style.css and print.css are added in footer section with the Media attributes.They are kept in footer section so that it starts building HTML and atlast goes for styling the HTML DOM with stylesheet.
 
 ## PART-2 Optimization in main.js file with 60fps
 
