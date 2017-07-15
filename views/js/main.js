@@ -555,9 +555,9 @@ function updatePositions() {
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
- var t= window.performance.getEntriesByName("measure_frame_duration");
+// var t= 
   if (frame % 10 === 0) {
-    var timesToUpdatePosition = t
+    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
 }
