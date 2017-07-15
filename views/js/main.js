@@ -512,8 +512,7 @@ function updatePositions() {
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
   var t=window.performance.getEntriesByName("measure_frame_duration");
   if (frame % 10 === 0) {
-    var th=t;
-    logAverageFrame(th);
+    logAverageFrame(t);
   }
 }
 
@@ -525,8 +524,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   /*As there was no need of loading 200 pizzas ,So just added 20 pizzas :)*/
-  var elem = document.createElement('img');
+  
   for (var i = 0; i < 20; i++) {
+    var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
