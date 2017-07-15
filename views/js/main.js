@@ -445,7 +445,8 @@ var resizePizzas = function(size) {
     as each and every it was being called and there was no need of it.*/
     // Iterates through pizza elements on the page and changes their widths
     function changePizzaSizes(size) {
-        var random = document.querySelectorAll(".randomPizzaContainer");
+        var random = document.getElementsByClassName("randomPizzaContainer");
+       // var random = document.querySelectorAll(".randomPizzaContainer");
         // Changes the slider value to a percent width
         var newwidth = 0;
 
