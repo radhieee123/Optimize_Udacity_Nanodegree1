@@ -542,12 +542,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var p=(document.body.scrollTop / 1250);
+  var p=(document.body.scrollTop);
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
     //var phase = Math.sin((p) + (i));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    var phase = Math.sin((p) + (i));
+    var phase = Math.sin((p/1250) + (i));
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
