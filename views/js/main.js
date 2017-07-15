@@ -544,20 +544,8 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
-  // calculate number based on scroll position, same for all pizzas
-  var bodyNum = (document.body.scrollTop / 1250);
-  // calculate phase number for all possible outcomes of n % 5
-  var phaseNums = [
-                    Math.sin(bodyNum + 0),
-                    Math.sin(bodyNum + 1),
-                    Math.sin(bodyNum + 2),
-                    Math.sin(bodyNum + 3),
-                    Math.sin(bodyNum + 4)
-                  ];
-
   for (var i = 0; i < items.length; i++) {
-    // set correct phase number based on i % 5
-    var phase = phaseNums[i%5];
+    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
