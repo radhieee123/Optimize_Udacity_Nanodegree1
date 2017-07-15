@@ -524,9 +524,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   /*As there was no need of loading 200 pizzas ,So just added 20 pizzas :)*/
-  var elem1 = document.createElement('img');
+//  var elem = document.createElement('img');
   for (var i = 0; i < 20; i++) {
-    var elem=elem1;
+      var elem = document.createElement('img');
+
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
