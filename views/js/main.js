@@ -494,10 +494,11 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+  var p=document.body.scrollTop;
   var items = document.querySelectorAll('.mover');
   
   for (var i = 0; i < items.length; i++) {
-    var p=document.body.scrollTop;
+
     /*Here, first the style segment is changed and then the layout.*/
     items[i].style.left = items[i].basicLeft + 100 * (Math.sin((p/1250) +(i))) + 'px';
     /*There was no need of modulo operator as the result was i.*/
