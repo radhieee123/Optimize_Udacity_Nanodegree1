@@ -543,13 +543,13 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var items = document.querySelectorAll('.mover');
-
+  var p=(document.body.scrollTop/1250);
 
   for (var i = 0; i < items.length; i++) {
     //var p=();
     //var phase = Math.sin((p) + (i));
     items[i].style.left = items[i].basicLeft + 100 * (phase) + 'px';
-    var phase=Math.sin((document.body.scrollTop/1250) + (i));
+    var phase=Math.sin((p) + (i));
     //var phase = (Math.sin((p/1250) + (i)));
   }
 
