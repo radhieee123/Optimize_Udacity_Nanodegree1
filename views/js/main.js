@@ -512,7 +512,8 @@ function updatePositions() {
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
   var t=window.performance.getEntriesByName("measure_frame_duration");
   if (frame % 10 === 0) {
-    logAverageFrame(t);
+    var th=t;
+    logAverageFrame(th);
   }
 }
 
