@@ -38,6 +38,8 @@ Script is:
 
 ##### The link tags for stylesheets style.css and print.css are added in footer section with the Media attributes.They are kept in footer section so that it starts building HTML and atlast goes for styling the HTML DOM with stylesheet.
 
+##### Added transform and backface visibility property in the views/css/style.css
+
 ## PART-2 Optimization in main.js file with 60fps
 
 ### 1) DetermineDx and Switch Case Function
